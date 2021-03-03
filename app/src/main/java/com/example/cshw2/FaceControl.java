@@ -1,15 +1,19 @@
 package com.example.cshw2;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
+import android.widget.Spinner;
+
+import androidx.annotation.RequiresApi;
 
 import java.util.Random;
 
 
-public class FaceControl implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
+public class FaceControl implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, AdapterView.OnItemSelectedListener {
     private Face view;
     Random rand = new Random();
 
@@ -22,12 +26,16 @@ public class FaceControl implements View.OnClickListener, CompoundButton.OnCheck
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button:
                 // do your code
                 view.hairStyle = rand.nextInt(3);
+                view.skinColor = rand.nextInt(1 + 167772) -167772;
+                view.eyeColor = rand.nextInt(1 + 167772) -167772;
+                view.hairColor = rand.nextInt(1 + 167772) -167772;
 
 
 
