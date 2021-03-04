@@ -12,6 +12,13 @@ import androidx.annotation.RequiresApi;
 import java.util.Random;
 
 
+//@author Cian Murray
+//Date: 3/3/21
+
+
+//This class is the faceController class. It controlls changes made to the face. When the user interacts with the widgits when the application is running,
+//some elemnet of the face class needs to change, and those changes are done in this class.
+//It sets colors, hair styles and seekbar progress based on user input
 public class FaceControl implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, AdapterView.OnItemSelectedListener {
 
     //Instance variables
